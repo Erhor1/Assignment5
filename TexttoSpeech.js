@@ -14,8 +14,8 @@ var TextToSpeechV1 = require('watson-developer-cloud/text-to-speech/v1');
 var fs = require('fs');
 
 var text_to_speech = new TextToSpeechV1 ({
-  username: '108713f1-318c-47a9-bb83-59d41e39adbb',
-  password: 'GLEZyvT34MEb'
+  username: 'd189766e-3fa9-439c-96c3-fcec56ca45d9',
+  password: 'EpY76qYqrQGd'
 });
 
 //==============================================================================================================================================================
