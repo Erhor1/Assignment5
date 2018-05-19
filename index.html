@@ -15,7 +15,7 @@
         <p id="uploadProgress"></p>
         <br>
         <p>Image input</p>
-        <p id="input"><!--<img src="" alt="Input image" >--></p>
+        <p><img id = "input" src="" alt="Input image" ></p>
         <br>
         <p>Image output</p>
         <p><canvas id="canvas" width="0" height="0"></canvas></p>
@@ -78,8 +78,9 @@
                 //Display input and output image
                 console.log('Received image');
                 var src = (window.URL||window.webkitURL).createObjectURL(new Blob(parts));
-                inputImage.innerHTML = "<img src='" + src + "' alt='Input image'>"
-                //inputImage.src = (window.URL||window.webkitURL).createObjectURL(new Blob(parts));
+                //inputImage.innerHTML = "<img id='inputImage' src='" + src + "' alt='Input image'>"
+                //var image = document.getElementById("inputImage");
+                inputImage.src = (window.URL||window.webkitURL).createObjectURL(new Blob(parts));
                 canvas.width = inputImage.width;
                 canvas.height = inputImage.height;
                 ctx.drawImage(inputImage, 0, 0);
