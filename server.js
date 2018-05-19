@@ -10,7 +10,6 @@ var fs = require("fs");
 var siofu = require("socketio-file-upload");
 var path = require("path");
 var ss = require('socket.io-stream');
-
 //==============================================================================================================================================================
 //Server Initialization
 //==============================================================================================================================================================
@@ -89,12 +88,7 @@ io.listen(server).on('connection', function(socket){
         faceDetection(filePath, function(data){
             logger.debug('Image Processed: \n' + data);
             logger.info('Sending input and output image');
-            var imageStream = ss.createStream();
-            fs.createReadStream(filePath).pipe(imageStream); //stream image
-            ss(socket).emit('image', imageStream);
-            socket.on("faceposition", function(){
-                socket.emit("faceposition", data.FacePosition);
-            });
+            
             var words = "";
             if (data.NumFaces>0){
                 words = "The image has " + data.NumFaces + " faces. "; //combine text to get one long sentence
@@ -106,8 +100,9 @@ io.listen(server).on('connection', function(socket){
                 words = "There are no faces in this image.";
             }
             logger.debug(words);
-
-            socket.emit('Info',words);
+            socket.emit('Info', words);
+            socket.emit('faceposition',data.FacePosition);
+            
             //Text to speech
             textToSpeech(words, function(datafile){
                 logger.info('Finished audio synthesis');
