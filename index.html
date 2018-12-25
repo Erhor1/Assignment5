@@ -35,7 +35,11 @@
             var ctx = canvas.getContext("2d");
             
             document.getElementById("siofu_input").addEventListener('change', DisplayImage, false); //On image upload, display it on the webpage
+<<<<<<< HEAD
             uploader.listenOnInput(document.getElementById("siofu_input")); //Upload image to server on file input
+=======
+            uploader.listenOnInput(document.getElementById("siofu_input"));
+>>>>>>> 2e627993b1d460400910b926daf1c056df8ea894
 
             uploader.addEventListener("start", function(event){
                 console.log('Started upload');
@@ -58,7 +62,11 @@
                 listen.innerHTML +=  'Audio ready...';
             });
 
+<<<<<<< HEAD
             socket.on('Info',function(data){ //Display photo info on page
+=======
+            socket.on('Info',function(data){
+>>>>>>> 2e627993b1d460400910b926daf1c056df8ea894
                 console.log('Image Properties: ' + data);
                 document.getElementById('datainfo').innerHTML = data;
             });
@@ -71,10 +79,17 @@
                     ctx.strokeStyle="white";
                     ctx.setLineDash([10, 5]);
                     ctx.beginPath();
+<<<<<<< HEAD
                     ctx.strokeRect(data[i].left, data[i].top, data[i].width, data[i].height); //Drawing rectangles
                     ctx.font = "30px Arial";
                     ctx.fillStyle = "red";
                     ctx.fillText(JSON.stringify(i+1), data[i].left+10, data[i].top+30) //Add a number to each face
+=======
+                    ctx.strokeRect(data[i].left, data[i].top, data[i].width, data[i].height);
+                    ctx.font = "30px Arial";
+                    ctx.fillStyle = "red";
+                    ctx.fillText(JSON.stringify(i+1), data[i].left+10, data[i].top+30)
+>>>>>>> 2e627993b1d460400910b926daf1c056df8ea894
                 }
             })
             

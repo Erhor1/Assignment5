@@ -91,7 +91,12 @@ io.listen(server).on('connection', function(socket){
         var filePath = path.join(uploader.dir, event.file.name);
         faceDetection(filePath, function(data){
             logger.debug('Image Processed: \n' + data);
+<<<<<<< HEAD
 
+=======
+            logger.info('Sending input and output image');
+            
+>>>>>>> 2e627993b1d460400910b926daf1c056df8ea894
             var words = "";
             if (data.NumFaces>0){
                 words = "The image has " + data.NumFaces + " faces. "; //combine text to get one long sentence
@@ -104,9 +109,15 @@ io.listen(server).on('connection', function(socket){
             }
 
             logger.debug(words);
+<<<<<<< HEAD
             socket.emit('Info', words); //Send photo information to client
             socket.emit('faceposition',data.FacePosition); //Send face positions to client
 
+=======
+            socket.emit('Info', words);
+            socket.emit('faceposition',data.FacePosition);
+            
+>>>>>>> 2e627993b1d460400910b926daf1c056df8ea894
             //Text to speech
             textToSpeech(words, function(datafile){
                 logger.info('Finished audio synthesis');
