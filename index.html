@@ -1,3 +1,6 @@
+<!--HTML File for face recognition-->
+<!--Must be used in conjunction with the server.js for it to work-->
+<!--Tested on Mozilla Firefox and Google Chrome. May not work in older browsers. Must have an internet connection.-->
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
@@ -9,41 +12,35 @@
     </head>
     <body>
         <p id="intro"><strong>Face Recognition</strong></p>
-        <label>Upload File: <input type="file" id="siofu_input" /></label>
-        <button id="my_button">Upload File</button>
-        <br>
-        <p id="uploadProgress"></p>
-        <br>
+        <label>Upload File: <input type="file" id="siofu_input" accept="image/*"/></label><p id="uploadProgress"></p>
         <p>Image input</p>
-        <p><img id = "input" src="" alt="Input image" ></p>
-        <br>
+        <p><img id = "input" src="#" alt="" ></p>
         <p>Image output</p>
         <p><canvas id="canvas" width="0" height="0"></canvas></p>
         <br>
         <p>Image Properties:</p>
         <p id="datainfo"></p>
-        <p id="listen">Audio: </p>
+        <p id="listen">Text to speech: </p>
         <audio id="player" controls><source src="" type="audio/wav"></audio>
         <p id="repeat"></p>
 
         <script>
             var socket = io.connect('http://localhost:3000'); //connect to server socket
+            var uploader = new SocketIOFileUpload(socket);
             var progress = document.getElementById("uploadProgress");
             var listen = document.getElementById("listen");
-            var uploader = new SocketIOFileUpload(socket);
             var inputImage = document.getElementById("input");
             var outputImage = document.getElementById("output");
             var canvas = document.getElementById("canvas");
             var ctx = canvas.getContext("2d");
-
-            uploader.listenOnSubmit(document.getElementById("my_button"), document.getElementById("siofu_input"));
+            
+            document.getElementById("siofu_input").addEventListener('change', DisplayImage, false); //On image upload, display it on the webpage
+            uploader.listenOnInput(document.getElementById("siofu_input")); //Upload image to server on file input
 
             uploader.addEventListener("start", function(event){
                 console.log('Started upload');
                 listen.innerHTML='';
                 document.getElementById("datainfo").innerHTML='';
-                console.log(document.getElementById("siofu_input"));
-                console.log(event);
             });
 
             uploader.addEventListener("progress", function(event){
@@ -54,8 +51,6 @@
             uploader.addEventListener("complete", function(event){
                 progress.innerHTML = "File successfully uploaded";
                 console.log('Finished upload');
-                console.log(event);
-                //inputImage.src =
             });
 
             socket.on("Finish processing", function(data){
@@ -63,44 +58,26 @@
                 listen.innerHTML +=  'Audio ready...';
             });
 
-            socket.on('Info',function(data){
-                console.log('Image Properties' + data);
+            socket.on('Info',function(data){ //Display photo info on page
+                console.log('Image Properties: ' + data);
                 document.getElementById('datainfo').innerHTML = data;
             });
 
-            ss(socket).on('image', function(stream, data){
-              parts = [];
-              stream.on('data', function(chunk){
-                parts.push(chunk);
-              });
-
-              stream.on('end', function(){
-                //Display input and output image
-                console.log('Received image');
-                var src = (window.URL||window.webkitURL).createObjectURL(new Blob(parts));
-                //inputImage.innerHTML = "<img id='inputImage' src='" + src + "' alt='Input image'>"
-                //var image = document.getElementById("inputImage");
-                inputImage.src = (window.URL||window.webkitURL).createObjectURL(new Blob(parts));
-                canvas.width = inputImage.width;
-                canvas.height = inputImage.height;
-                ctx.drawImage(inputImage, 0, 0);
-                socket.emit("faceposition");
-              })
-            });
-
             socket.on("faceposition", function(data){
-              //Draw box around faces
-              console.log(data);
-              for (var i = 0; i < data.length; i++)
-              {
-                console.log("draw rectangle");
-                ctx.lineWidth="3";
-                ctx.strokeStyle="white";
-                ctx.setLineDash([10, 5]);
-                ctx.beginPath();
-                ctx.strokeRect(data[i].left, data[i].top, data[i].width, data[i].height);
-              }
+                //Drawing a rectangle around each detected face
+                for (var i = 0; i < data.length; i++)
+                {
+                    ctx.lineWidth="3";
+                    ctx.strokeStyle="white";
+                    ctx.setLineDash([10, 5]);
+                    ctx.beginPath();
+                    ctx.strokeRect(data[i].left, data[i].top, data[i].width, data[i].height); //Drawing rectangles
+                    ctx.font = "30px Arial";
+                    ctx.fillStyle = "red";
+                    ctx.fillText(JSON.stringify(i+1), data[i].left+10, data[i].top+30) //Add a number to each face
+                }
             })
+            
             ss(socket).on('audiostream', function(stream, data) {
                 //Using https://github.com/zoutepopcorn/audio_socket/tree/master example
                 var audio = document.getElementById('player');
@@ -108,14 +85,31 @@
                 stream.on('data', function(chunk){
                     parts.push(chunk);
                 });
-
                 stream.on('end', function () {
-                    console.log('Completed stream. Playing...');
+                    console.log('Completed stream. Playing...');;
                     audio.src = (window.URL || window.webkitURL).createObjectURL(new Blob(parts)); //Create mp3 file from buffer
                     audio.play(); //Play audio
                     document.getElementById("repeat").innerHTML='Get new results by uploading another file.';
                 });
             });
+
+            function DisplayImage(){
+                //From https://stackoverflow.com/questions/10906734/how-to-upload-image-into-html5-canvas
+                if ( this.files && this.files[0] ) {
+                    var Reader= new FileReader();
+                    Reader.onload = function(e) {
+                        var img = new Image();
+                        img.src = e.target.result;
+                        img.onload = function() {
+                            canvas.width=img.width;
+                            canvas.height=img.height;
+                            inputImage.src=img.src;
+                            ctx.drawImage(img, 0, 0);
+                        };
+                    };       
+                    Reader.readAsDataURL( this.files[0] );
+                }
+            }
 
         </script>
     </body>

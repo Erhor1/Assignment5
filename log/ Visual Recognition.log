@@ -950,3 +950,57 @@
 {"level":"debug","message":"Number of faces: 1","timestamp":"05:45:18"}
 {"level":"debug","message":"Average Face Final: [53]","timestamp":"05:45:18"}
 {"level":"debug","message":"Gender Final: [MALE]","timestamp":"05:45:18"}
+{"level":"info","message":"Entered Image Recognition function with file: C:\\Users\\bzrk\\Desktop\\UNIVERSITY\\YEAR 4\\FIT3140\\Assignment5\\files\\testfaces.jpg","timestamp":"14:38:55"}
+{"level":"debug","message":"Average Age of face 0 = 27. Gender of face = MALE","timestamp":"14:38:57"}
+{"level":"debug","message":"Average Age of face 1 = 24.5. Gender of face = MALE","timestamp":"14:38:57"}
+{"level":"debug","message":"Average Age of face 2 = 29.5. Gender of face = MALE","timestamp":"14:38:57"}
+{"level":"debug","message":"Number of faces: 3","timestamp":"14:38:57"}
+{"level":"debug","message":"Average Face Final: [27,24.5,29.5]","timestamp":"14:38:57"}
+{"level":"debug","message":"Gender Final: [MALE,MALE,MALE]","timestamp":"14:38:57"}
+{"level":"info","message":"Entered Image Recognition function with file: C:\\Users\\bzrk\\Desktop\\UNIVERSITY\\YEAR 4\\FIT3140\\Assignment5\\files\\32725610_1904845039560165_524421086004117504_n.jpg","timestamp":"14:41:53"}
+{"level":"debug","message":"Average Age of face 0 = 20. Gender of face = FEMALE","timestamp":"14:41:58"}
+{"level":"debug","message":"Number of faces: 1","timestamp":"14:41:58"}
+{"level":"debug","message":"Average Face Final: [20]","timestamp":"14:41:58"}
+{"level":"debug","message":"Gender Final: [FEMALE]","timestamp":"14:41:58"}
+{"level":"info","message":"Entered Image Recognition function with file: C:\\Users\\bzrk\\Desktop\\UNIVERSITY\\YEAR 4\\FIT3140\\Assignment5\\files\\32740281_10209522611097236_4825292471682465792_o.jpg","timestamp":"14:44:05"}
+{"level":"debug","message":"Average Age of face 0 = 38. Gender of face = MALE","timestamp":"14:44:09"}
+{"level":"debug","message":"Average Age of face 1 = 24.5. Gender of face = FEMALE","timestamp":"14:44:09"}
+{"level":"debug","message":"Average Age of face 2 = 29.5. Gender of face = MALE","timestamp":"14:44:09"}
+{"level":"debug","message":"Average Age of face 3 = 37.5. Gender of face = FEMALE","timestamp":"14:44:09"}
+{"level":"debug","message":"Average Age of face 4 = 22. Gender of face = FEMALE","timestamp":"14:44:09"}
+{"level":"debug","message":"Average Age of face 5 = 21.5. Gender of face = FEMALE","timestamp":"14:44:09"}
+{"level":"debug","message":"Average Age of face 6 = 48. Gender of face = MALE","timestamp":"14:44:09"}
+{"level":"debug","message":"Average Age of face 7 = 20. Gender of face = FEMALE","timestamp":"14:44:09"}
+{"level":"debug","message":"Average Age of face 8 = 20. Gender of face = FEMALE","timestamp":"14:44:09"}
+{"level":"debug","message":"Number of faces: 9","timestamp":"14:44:09"}
+{"level":"debug","message":"Average Face Final: [38,24.5,29.5,37.5,22,21.5,48,20,20]","timestamp":"14:44:09"}
+{"level":"debug","message":"Gender Final: [MALE,FEMALE,MALE,FEMALE,FEMALE,FEMALE,MALE,FEMALE,FEMALE]","timestamp":"14:44:09"}
+{"level":"info","message":"Entered Image Recognition function with file: C:\\Users\\bzrk\\Desktop\\UNIVERSITY\\YEAR 4\\FIT3140\\Assignment5\\files\\testfaces.jpg","timestamp":"23:37:36"}
+{"level":"debug","message":"Average Age of face 0 = 27. Gender of face = MALE","timestamp":"23:37:40"}
+{"level":"debug","message":"Average Age of face 1 = 24.5. Gender of face = MALE","timestamp":"23:37:40"}
+{"level":"debug","message":"Average Age of face 2 = 29.5. Gender of face = MALE","timestamp":"23:37:40"}
+{"level":"debug","message":"Number of faces: 3","timestamp":"23:37:40"}
+{"level":"debug","message":"Average Face Final: [27,24.5,29.5]","timestamp":"23:37:40"}
+{"level":"debug","message":"Gender Final: [MALE,MALE,MALE]","timestamp":"23:37:40"}
+{"level":"info","message":"Entered Image Recognition function with file: C:\\Users\\bzrk\\Desktop\\UNIVERSITY\\YEAR 4\\FIT3140\\Assignment5\\files\\testfaces.jpg","timestamp":"23:41:22"}
+{"level":"debug","message":"Average Age of face 0 = 27. Gender of face = MALE","timestamp":"23:41:25"}
+{"level":"debug","message":"Average Age of face 1 = 24.5. Gender of face = MALE","timestamp":"23:41:25"}
+{"level":"debug","message":"Average Age of face 2 = 29.5. Gender of face = MALE","timestamp":"23:41:25"}
+{"level":"debug","message":"Number of faces: 3","timestamp":"23:41:25"}
+{"level":"debug","message":"Average Face Final: [27,24.5,29.5]","timestamp":"23:41:25"}
+{"level":"debug","message":"Gender Final: [MALE,MALE,MALE]","timestamp":"23:41:25"}
+{"level":"info","message":"Entered Image Recognition function with file: C:\\Users\\bzrk\\Desktop\\UNIVERSITY\\YEAR 4\\FIT3140\\Assignment5\\files\\testfaces.jpg","timestamp":"23:42:43"}
+{"level":"debug","message":"Average Age of face 0 = 27. Gender of face = MALE","timestamp":"23:42:47"}
+{"level":"debug","message":"Average Age of face 1 = 24.5. Gender of face = MALE","timestamp":"23:42:47"}
+{"level":"debug","message":"Average Age of face 2 = 29.5. Gender of face = MALE","timestamp":"23:42:47"}
+{"level":"debug","message":"Number of faces: 3","timestamp":"23:42:47"}
+{"level":"debug","message":"Average Face Final: [27,24.5,29.5]","timestamp":"23:42:47"}
+{"level":"debug","message":"Gender Final: [MALE,MALE,MALE]","timestamp":"23:42:47"}
+{"level":"info","message":"Entered Image Recognition function with file: C:\\Users\\bzrk\\Desktop\\UNIVERSITY\\YEAR 4\\FIT3140\\Assignment5\\files\\33058897_1907753019269367_1259872521059041280_n.jpg","timestamp":"13:22:29"}
+{"level":"debug","message":"Average Age of face 0 = 20. Gender of face = MALE","timestamp":"13:22:32"}
+{"level":"debug","message":"Average Age of face 1 = 19.5. Gender of face = MALE","timestamp":"13:22:32"}
+{"level":"debug","message":"Average Age of face 2 = 20. Gender of face = MALE","timestamp":"13:22:32"}
+{"level":"debug","message":"Average Age of face 3 = 24.5. Gender of face = MALE","timestamp":"13:22:32"}
+{"level":"debug","message":"Number of faces: 4","timestamp":"13:22:32"}
+{"level":"debug","message":"Average Face Final: [20,19.5,20,24.5]","timestamp":"13:22:32"}
+{"level":"debug","message":"Gender Final: [MALE,MALE,MALE,MALE]","timestamp":"13:22:32"}

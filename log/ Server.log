@@ -110,3 +110,55 @@
 {"level":"debug","message":"The image has 1 faces. Face number 1 is a MALE and the average age is 53. ","timestamp":"05:45:18"}
 {"level":"info","message":"Finished audio synthesis","timestamp":"05:45:21"}
 {"level":"info","message":"Streaming audio","timestamp":"05:45:21"}
+{"level":"info","message":"Listening on Port 3000","timestamp":"14:38:40"}
+{"level":"info","message":"Client UGZK9bfrr9CRiGT_AAAA has connected","timestamp":"14:38:47"}
+{"level":"debug","message":"Upload Started","timestamp":"14:38:55"}
+{"level":"debug","message":"Image Processed: \n[object Object]","timestamp":"14:38:57"}
+{"level":"info","message":"Sending input and output image","timestamp":"14:38:57"}
+{"level":"debug","message":"The image has 3 faces. Face number 1 is a MALE and the average age is 27. Face number 2 is a MALE and the average age is 24.5. Face number 3 is a MALE and the average age is 29.5. ","timestamp":"14:38:57"}
+{"level":"info","message":"Finished audio synthesis","timestamp":"14:38:58"}
+{"level":"info","message":"Streaming audio","timestamp":"14:38:58"}
+{"level":"info","message":"Client 2jHSpVxdGao2za5HAAAB has connected","timestamp":"14:41:45"}
+{"level":"debug","message":"Upload Started","timestamp":"14:41:53"}
+{"level":"debug","message":"Image Processed: \n[object Object]","timestamp":"14:41:58"}
+{"level":"info","message":"Sending input and output image","timestamp":"14:41:58"}
+{"level":"debug","message":"The image has 1 faces. Face number 1 is a FEMALE and the average age is 20. ","timestamp":"14:41:58"}
+{"level":"info","message":"Finished audio synthesis","timestamp":"14:41:58"}
+{"level":"info","message":"Streaming audio","timestamp":"14:41:58"}
+{"level":"info","message":"Client Gg8kk-DVkb8hE_ZnAAAC has connected","timestamp":"14:43:48"}
+{"level":"debug","message":"Upload Started","timestamp":"14:44:04"}
+{"level":"debug","message":"Image Processed: \n[object Object]","timestamp":"14:44:09"}
+{"level":"info","message":"Sending input and output image","timestamp":"14:44:09"}
+{"level":"debug","message":"The image has 9 faces. Face number 1 is a MALE and the average age is 38. Face number 2 is a FEMALE and the average age is 24.5. Face number 3 is a MALE and the average age is 29.5. Face number 4 is a FEMALE and the average age is 37.5. Face number 5 is a FEMALE and the average age is 22. Face number 6 is a FEMALE and the average age is 21.5. Face number 7 is a MALE and the average age is 48. Face number 8 is a FEMALE and the average age is 20. Face number 9 is a FEMALE and the average age is 20. ","timestamp":"14:44:09"}
+{"level":"info","message":"Finished audio synthesis","timestamp":"14:44:10"}
+{"level":"info","message":"Streaming audio","timestamp":"14:44:10"}
+{"level":"info","message":"Client a5uQjh9LRq91hw_fAAAD has connected","timestamp":"16:07:27"}
+{"level":"info","message":"Listening on Port 3000","timestamp":"23:36:51"}
+{"level":"info","message":"Client 0oL1E5fr2dci_iiIAAAA has connected","timestamp":"23:37:28"}
+{"level":"debug","message":"Upload Started","timestamp":"23:37:36"}
+{"level":"debug","message":"Image Processed: \n[object Object]","timestamp":"23:37:40"}
+{"level":"info","message":"Sending input and output image","timestamp":"23:37:40"}
+{"level":"debug","message":"The image has 3 faces. Face number 1 is a MALE and the average age is 27. Face number 2 is a MALE and the average age is 24.5. Face number 3 is a MALE and the average age is 29.5. ","timestamp":"23:37:40"}
+{"level":"info","message":"Finished audio synthesis","timestamp":"23:37:40"}
+{"level":"info","message":"Streaming audio","timestamp":"23:37:40"}
+{"level":"info","message":"Client NDZrrHmgjKPzJ2E9AAAB has connected","timestamp":"23:41:09"}
+{"level":"debug","message":"Upload Started","timestamp":"23:41:22"}
+{"level":"debug","message":"Image Processed: \n[object Object]","timestamp":"23:41:25"}
+{"level":"info","message":"Sending input and output image","timestamp":"23:41:25"}
+{"level":"debug","message":"The image has 3 faces. Face number 1 is a MALE and the average age is 27. Face number 2 is a MALE and the average age is 24.5. Face number 3 is a MALE and the average age is 29.5. ","timestamp":"23:41:25"}
+{"level":"info","message":"Finished audio synthesis","timestamp":"23:41:25"}
+{"level":"info","message":"Streaming audio","timestamp":"23:41:25"}
+{"level":"info","message":"Client o-pFya57G2hy5M_rAAAC has connected","timestamp":"23:42:27"}
+{"level":"debug","message":"Upload Started","timestamp":"23:42:43"}
+{"level":"debug","message":"Image Processed: \n[object Object]","timestamp":"23:42:47"}
+{"level":"info","message":"Sending input and output image","timestamp":"23:42:47"}
+{"level":"debug","message":"The image has 3 faces. Face number 1 is a MALE and the average age is 27. Face number 2 is a MALE and the average age is 24.5. Face number 3 is a MALE and the average age is 29.5. ","timestamp":"23:42:47"}
+{"level":"info","message":"Finished audio synthesis","timestamp":"23:42:47"}
+{"level":"info","message":"Streaming audio","timestamp":"23:42:47"}
+{"level":"info","message":"Listening on Port 3000","timestamp":"13:22:12"}
+{"level":"info","message":"Client m0wZC11Iwje_x7_RAAAA has connected","timestamp":"13:22:13"}
+{"level":"debug","message":"Upload Started","timestamp":"13:22:29"}
+{"level":"debug","message":"Image Processed: \n[object Object]","timestamp":"13:22:32"}
+{"level":"debug","message":"The image has 4 faces. Face number 1 is a MALE and the average age is 20. Face number 2 is a MALE and the average age is 19.5. Face number 3 is a MALE and the average age is 20. Face number 4 is a MALE and the average age is 24.5. ","timestamp":"13:22:32"}
+{"level":"info","message":"Finished audio synthesis","timestamp":"13:22:37"}
+{"level":"info","message":"Streaming audio","timestamp":"13:22:37"}

@@ -1,7 +1,8 @@
 //==============================================================================================================================================================
 //Arguments: Text to be synthesizied in string format
 //Returns: Creates a .wav file in the root filesystem.
-//Preconditions: Must be connected to the internet. Need to have file write access in directory. Must have adequete space for output file.
+//Preconditions: Must be connected to the internet. Need to have file write access in directory. Must have adequete space for output file. need to have proper credientials
+//               , need to have enough quota in IBM Watson account, need to have watson-developer-cloud and winston npm modules installed
 //
 //Since synthesising voices is assyncronous, A callback needs to be used like below:
 //  Text2Speech('hello',function(){ *DO SOMETHING WITH THE VOICE FILE*});
@@ -14,8 +15,8 @@ var TextToSpeechV1 = require('watson-developer-cloud/text-to-speech/v1');
 var fs = require('fs');
 
 var text_to_speech = new TextToSpeechV1 ({
-  username: '108713f1-318c-47a9-bb83-59d41e39adbb',
-  password: 'GLEZyvT34MEb'
+  username: 'd189766e-3fa9-439c-96c3-fcec56ca45d9',
+  password: 'EpY76qYqrQGd'
 });
 
 //==============================================================================================================================================================

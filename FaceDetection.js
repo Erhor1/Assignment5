@@ -1,8 +1,8 @@
 //==============================================================================================================================================================
 //Arguments: file name in string format of image to be processed. Need to include file type e.g. .jpg or .png
-//Returns: An object with the age and gender arrays of each image and the number of faces. The age and gender of face[i] is in AverageAge[i] and Gender[i].
-//Preconditions: Must be connected to the internet
-//Limitations: file only accepts image files
+//Returns: An object with the age,gender and position arrays of each image and the number of faces. The age and gender of face[i] is in AverageAge[i] and Gender[i].
+//Preconditions: Must be connected to the internet, credentials need to be valid (i.e. face quotia not reached), need to have winston and watson-developer-cloud npm modules installed
+//Limitations: file only accepts image files and be of appropriate size to detect a face (i.e. not thumbnail quality)
 //
 //Since .detectFaces is assyncronous, A callback needs to be used like below:
 //  ProcessImage('./TestImage2.jpg',function(Data){console.log(Data)}); where Data is the data object
@@ -72,7 +72,6 @@ module.exports = function ProcessImage(file,callback){
         logger.error(err);
     else
         var Data=response.images[0].faces;
-        console.log(Data);
         for (var i=0;i<Data.length;i++){
             FaceAges.push((Data[i].age.min+Data[i].age.max)/2); //Get the average age of each face
             FaceGender.push(Data[i].gender.gender); //Get the gender of each face

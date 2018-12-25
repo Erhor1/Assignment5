@@ -1,7 +1,12 @@
 //==============================================================================================================================================================
-//Nodejs Server code
+//Nodejs Server code for Facial Recognition Project
+//
+//Code creates an express server which serves a HTML webpage on localhost:3000. From here, the user can upload an image and get basic information such as face
+//age, location and gender. Also includes a text-to-speech of the photo information. A dotted rectangle is drawn around each face and it is numbered.
+//
 //Usage: Run by calling 'node server.js' in console
-//Prerequisites: Need to be connected to the internet. Need to have correct modules installed (under require below). Need to have correct admin privlidges and firewall access.
+//Prerequisites: Need to be connected to the internet. Need to have correct modules installed (under 'require' below). Need to have correct admin privlidges and firewall access.
+
 //==============================================================================================================================================================
 //Dependencies
 var faceDetection = require("./FaceDetection.js");
@@ -10,11 +15,9 @@ var fs = require("fs");
 var siofu = require("socketio-file-upload");
 var path = require("path");
 var ss = require('socket.io-stream');
-
 //==============================================================================================================================================================
 //Server Initialization
 //==============================================================================================================================================================
-
 var app = require("express")().use(siofu.router); //initialise express app
 var server = require('http').Server(app); //create server
 var io = require("socket.io")(server); //create socket
@@ -65,7 +68,7 @@ app.get('/', function(req, res){
 });
 
 //==============================================================================================================================================================
-//ProcessImage function Definition
+//Server Socketio Connections
 //==============================================================================================================================================================
 //listen for connection
 io.listen(server).on('connection', function(socket){
@@ -88,26 +91,22 @@ io.listen(server).on('connection', function(socket){
         var filePath = path.join(uploader.dir, event.file.name);
         faceDetection(filePath, function(data){
             logger.debug('Image Processed: \n' + data);
-            logger.info('Sending input and output image');
-            var imageStream = ss.createStream();
-            fs.createReadStream(filePath).pipe(imageStream); //stream image
-            ss(socket).emit('image', imageStream);
-            socket.on("faceposition", function(){
-                socket.emit("faceposition", data.FacePosition);
-            });
+
             var words = "";
             if (data.NumFaces>0){
                 words = "The image has " + data.NumFaces + " faces. "; //combine text to get one long sentence
                 for (var i = 1; i <= data.NumFaces; i++){
-                    words = words + "Face number " + i + " is a " + data.Gender[i-1] + " and the average age is " + data.AverageAge[i-1] + ". ";
+                    words = words + "Face number " + i + " is a " + data.Gender[i-1] + " and the average age is " + data.AverageAge[i-1] + ". "; //Get info of each face
                 }
             }
             else {
                 words = "There are no faces in this image.";
             }
-            logger.debug(words);
 
-            socket.emit('Info',words);
+            logger.debug(words);
+            socket.emit('Info', words); //Send photo information to client
+            socket.emit('faceposition',data.FacePosition); //Send face positions to client
+
             //Text to speech
             textToSpeech(words, function(datafile){
                 logger.info('Finished audio synthesis');
